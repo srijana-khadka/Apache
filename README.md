@@ -9,7 +9,7 @@ RUN sed -E -i -e 's/DirectoryIndex (.*)$/DirectoryIndex index.php \1/g' /etc/htt
 EXPOSE 8081
 # Build 
 >Copy the  Dockerfile and do the build
-* docker build --tag <username>/httpd .
+* docker build --tag username/httpd .
 # Usage
  * docker run -d -p 80:80 --name apache1 httpd
  * docker ps
