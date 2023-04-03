@@ -7,4 +7,11 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 RUN sed -E -i -e '/<Directory "\/var\/www\/html">/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
 RUN sed -E -i -e 's/DirectoryIndex (.*)$/DirectoryIndex index.php \1/g' /etc/httpd/conf/httpd.conf
 EXPOSE 8081
-
+# Build 
+>Copy the  Dockerfile and do the build
+* docker build --tag <username>/httpd .
+# Usage
+ * docker run -d -p 80:80 --name apache1 httpd
+ * docker ps
+# Test
+ - curl http://ip:80
