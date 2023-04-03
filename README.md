@@ -1,7 +1,7 @@
 # Dockerfile
- FROM centos:7
- RUN yum update -y && yum clean all
- RUN yum install -y httpd httpd-tools
+   FROM centos:7
+   RUN yum update -y && yum clean all
+   RUN yum install -y httpd httpd-tools
  RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
  && rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
  RUN sed -E -i -e '/<Directory "\/var\/www\/html">/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
